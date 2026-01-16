@@ -4,42 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Iframe Click Test</title>
-    <script>
-    </script>
+    <style>
+      .iframes {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      .iframes iframe {
+        margin-top: 16px;
+      }
+
+      h1 {
+        font-size: 18px;
+      }
+
+      div {
+        color: gray;
+      }
+
+      a {
+        color: black;
+      }
+    </style>
 </head>
 <body>
     <h1>Link</h1>
-    <h2>link normal (target=_self by default)</h2>
-    <a href="https://cashwalk.com">cashwalk.com</a>
-    <h2>link target=_self</h2>
-    <a href="https://cashwalk.com" target="_self">cashwalk.com</a>
-    <h2>link target=_blank</h2>
-    <a href="https://cashwalk.com" target="_blank">cashwalk.com</a>
-    <h2>link target=_top</h2>
-    <a href="https://cashwalk.com" target="_top">cashwalk.com</a>
-    <h2>link target=_parent</h2>
-    <a href="https://cashwalk.com" target="_parent">cashwalk.com</a>
-    <h2>link target=_unfencedTop</h2>
-    <a href="https://cashwalk.com" target="_unfencedTop">cashwalk.com</a>
+    <div>link normal (target=_self by default) <a href="https://cashwalk.com">cashwalk.com</a></div>
+    <div>link target=_self <a href="https://cashwalk.com" target="_self">cashwalk.com</a></div>
+    <div>link target=_blank <a href="https://cashwalk.com" target="_blank">cashwalk.com</a></div>
+    <div>link target=_top <a href="https://cashwalk.com" target="_top">cashwalk.com</a></div>
+    <div>link target=_parent <a href="https://cashwalk.com" target="_parent">cashwalk.com</a></div>
+    <div>link target=_unfencedTop <a href="https://cashwalk.com" target="_unfencedTop">cashwalk.com</a></div>
     <br />
     <h1>iframe (sandboxed - treated as cross-origin)</h1>
-    <h2>link normal (target=_self by default)</h2>
-    <iframe src="./iframe_links/default.html" sandbox="allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation" width="600" height="240"></iframe>
+    <div class="iframes">
+      <iframe src="./iframe_links/default.html" sandbox="allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation" width="300" height="150"></iframe>
 
-    <h2>link target=_self</h2>
-    <iframe src="./iframe_links/self.html" sandbox="allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation" width="600" height="240"></iframe>
+      <iframe src="./iframe_links/self.html" sandbox="allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation" width="300" height="150"></iframe>
 
-    <h2>link target=_blank</h2>
-    <iframe src="./iframe_links/blank.html" sandbox="allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation" width="600" height="240"></iframe>
+      <iframe src="./iframe_links/blank.html" sandbox="allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation" width="300" height="150"></iframe>
 
-    <h2>link target=_top</h2>
-    <iframe src="./iframe_links/top.html" sandbox="allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation" width="600" height="240"></iframe>
+      <iframe src="./iframe_links/top.html" sandbox="allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation" width="300" height="150"></iframe>
 
-    <h2>link target=_parent</h2>
-    <iframe src="./iframe_links/parent.html" sandbox="allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation" width="600" height="240"></iframe>
+      <iframe src="./iframe_links/parent.html" sandbox="allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation" width="300" height="150"></iframe>
 
-    <h2>link target=_unfencedTop</h2>
-    <iframe src="./iframe_links/unfencedtop.html" sandbox="allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation" width="600" height="240"></iframe>
-
+      <iframe src="./iframe_links/unfencedtop.html" sandbox="allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation" width="300" height="150"></iframe>
+    </div>
 </body>
 </html>

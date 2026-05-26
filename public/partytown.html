@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Partytown Checks</title>
+  <style>
+    body { font-family: sans-serif; padding: 24px; }
+    h1 { font-size: 20px; }
+    table { border-collapse: collapse; margin-top: 16px; }
+    th, td { text-align: left; padding: 8px 16px; border: 1px solid #ddd; }
+    th { background: #f5f5f5; }
+    .true { color: green; font-weight: bold; }
+    .false { color: red; font-weight: bold; }
+    a { font-size: 14px; color: #0070f3; }
+  </style>
+</head>
+<body>
+  <a href="index.html">&larr; Back</a>
+  <h1>Partytown Checks</h1>
+  <table>
+    <thead>
+      <tr><th>Check</th><th>Result</th></tr>
+    </thead>
+    <tbody id="results"></tbody>
+  </table>
+  <script>
+    const checks = [
+      { label: 'window.crossOriginIsolated', value: window.crossOriginIsolated },
+      { label: "'serviceWorker' in navigator", value: 'serviceWorker' in navigator },
+    ];
+
+    const tbody = document.getElementById('results');
+    checks.forEach(({ label, value }) => {
+      const tr = document.createElement('tr');
+      tr.innerHTML = `<td>${label}</td><td class="${value}">${value}</td>`;
+      tbody.appendChild(tr);
+    });
+  </script>
+</body>
+</html>
